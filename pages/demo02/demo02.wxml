@@ -1,0 +1,24 @@
+<!--pages/demo02/demo02.wxml-->
+<text>pages/demo02/demo02.wxml</text>
+
+<template name="msgItem">
+  <view>
+    <text>{{item}}</text>
+  </view>
+</template>
+
+<template name="numTpl">
+ <text>{{count}}</text>
+</template>
+<template is="numTpl" data="{{count}}"></template>
+
+<view>
+    <template wx:for="{{list}}"  wx:key="{{index}}" is="msgItem" 
+    data="{{item}}"/>
+</view>  
+
+// 事件绑定
+<button bindtap="handleClick">clickMe</button>  
+<view  bindtap="handleClick">
+    <text>123</text>
+</view>

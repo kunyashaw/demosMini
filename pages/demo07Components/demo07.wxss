@@ -1,0 +1,23 @@
+/* pages/demo07Components/demo07.wxss */
+.flex-wrap{
+    display:flex;
+    /* 默认主轴是x */
+    flex-direction: column
+}
+
+.flex-wrap view{
+    width:200rpx;
+    height:200rpx;
+    line-height:200rpx;
+    text-align:center;
+    font-size:40rpx;
+    color:white;
+}
+
+.a{background: green}
+
+.b{background: red}
+
+.c{background: blue}
+
+

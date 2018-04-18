@@ -1,0 +1,11 @@
+<!--pages/demo03Quote/demo03.wxml-->
+<import src="../utility/list_tpl.wxml"/>
+<include src="../utility/header.wxml"/>
+<view>
+    <text>我是正文</text>
+    <!--准备在此调用引入模板并传数据去展示 -->
+    <template is="list" data="{{array}}">
+    </template>
+</view>
+
+<include src="../utility/header.wxml"/>

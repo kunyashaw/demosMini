@@ -1,0 +1,23 @@
+<!--pages/demo11Media/demo11.wxml-->
+<text>pages/demo11Media/demo11.wxml</text>
+<audio 
+bindtimeupdate='handleTimeUpdate'
+poster="{{poster}}" name="{{name}}" author="{{author}}" src="{{src}}" id="myAudio" controls loop></audio>
+
+<button type="primary" bindtap="audioPlay">播放</button>
+<button type="primary" bindtap="audioPause">暂停</button>
+<button type="primary" bindtap="audio14">设置当前播放时间为14秒</button>
+<button type="primary" bindtap="audioStart">回到开头</button>
+<button type="primary" bindtap="audioForward">快进</button>
+<button type="primary" bindtap="audioBackward">快退</button>
+<slider min='0' max="{{totalTime}}" 
+value="{{progressValue}}" bindchange='handleChange'></slider>
+
+
+<view wx:for="{{array}}" >
+  <view>{{item.text}}</view>
+  <image 
+  mode="{{item.mode}}"
+  src="../../resources/12.jpg"
+  style="width:200px;height:200px;background-color:#eeeeee"></image>
+</view>

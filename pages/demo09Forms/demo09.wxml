@@ -1,0 +1,37 @@
+<!--pages/demo09Forms/demo09.wxml-->
+<text>pages/demo09Forms/demo09.wxml</text>
+<form>
+    <view>选择数据</view>
+    <!-- 这个破玩意得上下滚动选中 -->
+    <picker mode="selector"
+    bindchange="handleNumChange"
+     value="{{nowPickNum}}" range="{{list}}">
+        <view>当前选择:{{list[nowPickNum]}}</view>
+    </picker>
+
+    <view>时间选择器</view>
+    <picker mode="time" start="09:00" end="22:00"  bindchange="handleChangeTime">
+    <view>当前选择:{{nowPickTime}}</view>
+    </picker>
+    <view>日期选择器</view>
+    <picker bindchange="handleChangeDate" mode="date" start="1980-00-00" end="2018-1-1">
+        <view>当前选择:{{nowPickDate}}</view>
+    </picker>
+     <view>城市选择器</view>
+    <picker bindchange="handleChangeCity" value="{{cities}}" mode="region" >
+        <view>当前选择:{{nowPickCity}}</view>
+    </picker>
+
+    <!-- slider bindchange完成一次拖动后触发的事件 -->
+    <slider min="0" max="100" step="5" bindchanging="changeVolume" >
+    声音调节
+    </slider>
+
+    <switch checked="{{true}}"  color="blue" bindchange="handleChangeSwitch">卧室开关</switch>
+
+    <textarea placeholder="请输入留言信息" 
+    bindinput="handleSaveMsg" 
+    style="border:1px solid red;background-color:powderblue"></textarea>
+    
+    <button type="warn">提交</button>
+</form>

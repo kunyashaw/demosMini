@@ -1,0 +1,10 @@
+/* pages/demo04Css/demo04.wxss */
+view{
+  /* 有问题 为啥没有显示？他奶奶的！！ */
+  width:375rpx;
+  height:200px;
+  background-color:'powderblue'
+}
+text{
+    color:green;
+  }

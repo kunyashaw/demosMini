@@ -1,0 +1,103 @@
+
+<!--flexbox-->
+
+<view class="flex-wrap">
+    <view class="a">1</view>
+    <view class="b">2</view>
+    <view class="c">3</view>
+</view>
+
+
+<!--普通view 滚动效果能出来 但不好处理 -->
+<view style="height:100px;width:200px;border:1px solid red;overflow:scroll">
+    <view style="height:70px;width:100px;background-color:red">1</view>
+    <view     
+style="height:70px;width:100px;background-color:powderblue">2</view>
+    <view style="height:70px;width:100px;background-color:red">3</view>
+    <view 
+style="height:70px;width:100px;background-color:powderblue">4</view>
+</view>
+
+<!--默认效果没有滚动 需要加上scroll-x scroll-y 设置为true即允许x轴或者y轴滚动 
+注意：滚动有个前提 就是这个方向的元素宽度或者高度 得超过容器才有效果
+-->
+
+<!--
+bindscrolltoupper			滚动到顶部/左边，会触发 scrolltoupper 事件
+bindscrolltolower			滚动到底部/右边，会触发 scrolltolower 事件
+scroll-top="100" 默认纵轴上直接滚动距离顶部的距离
+scroll-into-view="testId" 直接跳转到id为testId的元素
+-->
+<scroll-view 
+scroll-y="true"
+scroll-x="true"
+scroll-top="100"
+scroll-into-view="{{nowId}}"
+bindscrolltoupper="handleUpper"
+style="height:100px;width:200px;border:1px solid green">
+    <view id="id1" style="height:70px;width:100px;background-color:red">1</view>
+    <view     id="id2"
+style="height:70px;width:100px;background-color:powderblue">2</view>
+    <view id="id3" style="height:70px;width:100px;background-color:red">3</view>
+    <view id="id4"
+style="height:70px;width:100px;background-color:powderblue">4</view>
+</scroll-view>
+
+<button bindtap="changeview">切换</button>  
+<swiper indicator-dots="true" autoplay="true">
+    <swiper-item wx:for="{{imgList}}">
+        <image src="{{item.image}}"></image>
+    </swiper-item>
+</swiper>
+
+
+<movable-area style="width:300px;height:100px;border:1px solid red">
+   <movable-view inertia="true" direction="all" out-of-bounds="true" style="width:100px;height:50px;border:1px solid green">
+    <text>123</text>
+   </movable-view>
+</movable-area>    
+
+<view class="group">
+  <block wx:for="{{iconColor}}">
+    <icon type="success" size="40" color="{{item}}"/>
+  </block>
+</view>
+<view class="group">
+  <block wx:for="{{iconSize}}">
+    <icon type="success" size="{{item}}"/>
+  </block>
+</view>
+
+<view class="group">
+  <block wx:for="{{iconType}}">
+    <icon type="{{item}}" size="40"/>
+  </block>
+</view>
+
+<icon type="success_no_circle" size="35" color="yellow"></icon>    
+
+<!--decode可以解析的有 &nbsp; &lt; &gt; &amp; &apos; &ensp; &emsp;-->
+<text selectable="true" decode="{{true}}"> hello world&nbsp;&nbsp;123</text>
+
+
+<progress 
+color="red"
+show-info="true"
+activeColor="blue"
+backgroundColor="#333"
+active-mode="forwards"
+percent="{{progressValue}}"
+ stroke-width="20">
+</progress>
+<button bindtap="modifyProgress">开始</button>
+
+<view>123</view>
+<view>123</view>
+<view>123</view>
+<view>123</view>
+
+<!-- 支持nodes属性
+nodes
+现支持两种节点，通过type来区分，分别是元素节点和文本节点，默认是元素节点，在富文本区域里显示的HTML节点 -->
+<rich-text nodes="{{myHtml1}}"></rich-text>
+<rich-text nodes="{{myHtml2}}"></rich-text>

@@ -1,0 +1,20 @@
+<!--pages/demo01/demo01.wxml-->
+<text>这是demo01</text>
+
+<view>
+    <text wx:for="{{list}}">
+        {{"index is "+index+" item is "+item}}    
+    </text>
+</view>
+<!--起别名-->
+<view>
+    <text wx:for="{{list}}" wx:for-item="value" wx:for-index="key">
+        {{"index is "+key+" item is "+value}}    
+    </text>
+</view>
+
+<text wx:if="{{!isMember}}">
+ 这是一个广告
+</text>    
+
+<button >clickeme</button>

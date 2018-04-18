@@ -1,0 +1,30 @@
+<!-- pages/demo08Forms/demo08.wxml -->
+<text>pages/demo08Forms/demo08.wxml</text>
+<button size="default" type="default" plain>button</button>
+<button loading="{{true}}" disabled="{{false}}">btn2</button>
+<form bindsubmit="handleSubmit">
+    <label for="uname">用户名</label>
+    <input type="text" id="uname" name="uname" placeholder="请输入用户名" bindinput="changUname"></input>
+    <label for="upwd">密码</label>
+    <input type="text" id="upwd" name="upwd" placeholder="请输入密码" bindinput="changUpwd"></input>
+    <checkbox-group bindchange="checkboxChange">
+        <label for="agree">
+            <checkbox id="agree" value="yes" name="agree" color="green"></checkbox>
+            是否记住密码
+        </label>
+    </checkbox-group>
+    <text>{{'\n'}}</text>
+    <text>选择喜欢的颜色（可以多选）</text>
+    <checkbox-group bindchange="saveFavColor">
+        <checkbox value="red">红色</checkbox>
+        <checkbox value="green">绿色</checkbox>
+        <checkbox value="blue">蓝色</checkbox>
+    </checkbox-group>
+    <view>=选择性别</view>
+    <radio-group bindchange="saveSex">
+        <radio value="boy">男</radio>
+        <radio value="girl">女</radio>
+    </radio-group>
+    <button size="mini" type="primary" form-type="submit">提交</button>
+</form>
+

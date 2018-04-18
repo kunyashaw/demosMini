@@ -1,0 +1,6 @@
+<!--pages/demo04Css/demo04.wxml-->
+
+<!-- @import '../../utils/css/common.wxss' -->
+<view>
+<text>pages/demo04Css/demo04.wxml</text>
+</view>

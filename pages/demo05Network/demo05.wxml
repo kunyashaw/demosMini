@@ -1,0 +1,17 @@
+<!--pages/demo05Network/demo05.wxml-->
+<text>pages/demo05Network/demo05.wxml</text>
+
+<view>
+
+    <view wx:for="{{array}}" wx:key="{{index}}">
+        <text >{{item.name}}</text>
+    </view>
+    <button bindtap="loadData">加载更多</button>
+    
+</view>
+<view>
+    <input type="text" bindinput="changeName" placeholder="请输入用户名"/>
+</view>
+<view>
+    <input type="password" bindinput="changePwd" placeholder="请输密码"/>
+</view>
